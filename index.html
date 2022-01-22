@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Googler | The Best Notes App</title>
+    <link rel="stylesheet" href="/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+</head>
+<body>
+    <main id="main-panel">
+        <section id="top-section">
+            <!-- Header -->
+            <section id="header">
+                <h1>Keep track of your notes with <a href="/index.html"><span>Googler</span></a></h1>
+            </section>
+            
+            <!-- Login/Register -->
+            <section id="user-buttons">
+                <div>
+                    <ul>
+                        <a href="#"><li><i class="fas fa-sign-in-alt"></i>Login</li></a>
+                        <a href="#"><li><i class="fas fa-user-plus"></i>Register</li></a>
+                    </ul>
+                </div>
+                <div class="user-info"></div>
+            </section>
+
+            <!-- Welcome Section -->
+            <section id="welcome">
+                <h3>Start taking notes.</h3>
+                <h5>To begin, click the “Add new note” button.</h5>
+            </section>
+
+            <!-- Add New Note Button -->
+            <section id="add-new">
+                <button class="new-note btn btn-secondary"><i class="fas fa-plus"></i>Add new note</button>
+            </section>
+        </section>
+
+        <section id="new-note-form">
+            <div>
+                <input type="text" placeholder="Title here e.g. Grocery List">
+                <textarea rows="4" placeholder="Write your note here e.g.
+- Bakery and Bread
+- Meat and Seafood
+- Pasta and Rice"></textarea>
+            </div>
+            <button class="btn btn-small submit">SUBMIT</button>
+        </section>
+
+        <!-- Grid/List Buttons -->
+        <section id="grid-list">
+            <ul>
+                <li class="grid-icon btn btn-primary"><i class="fas fa-th-large"></i><input type="checkbox"></li>
+                <li class="list-icon btn btn-primary"><i class="fas fa-th-list"></i><input type="checkbox"></li>
+            </ul>
+        </section>
+
+        <!-- Notes Area -->
+        <section id="notes-area">
+            <div class="notes">
+            </div>
+        </section>
+    </main>
+
+    <script type="text/javascript" src="/main.js"></script>
+</body>
+</html>

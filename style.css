@@ -1,0 +1,459 @@
+:root {
+  --primary-color: #2381d8;
+  --secondary-color: #39c797;
+  --alternative-color: #cf2f2f;
+  --hover-color: #cf2f2f;
+  --text: #181818;
+  --light-grey: #f7f7f7;
+  --font: "Open Sans", sans-serif;
+}
+
+* {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* -- Utilities -- */
+
+body {
+  background: #2381d8;
+  color: var(--text);
+  letter-spacing: 0;
+  font-family: var(--font);
+}
+
+a {
+  text-decoration: none;
+}
+
+:is(a, li):hover {
+  color: var(--hover-color) !important;
+}
+
+a:visited {
+  color: inherit;
+}
+
+.fas {
+  margin-right: 5px;
+}
+
+ul li {
+  list-style-type: none;
+  display: inline-block;
+}
+
+input[type="text"],
+input[type="checkbox"] {
+  border: none;
+  border-radius: 10px;
+}
+
+/* -- Buttons -- */
+
+.btn {
+  border: none;
+  border-radius: 10px;
+  text-align: center;
+  font-weight: 600;
+  font-family: var(--font);
+}
+
+.btn:hover {
+  cursor: pointer;
+}
+
+.btn-primary {
+  background: var(--primary-color);
+  color: #fff;
+}
+
+:is(.btn-primary, .btn-secondary):hover {
+  background: var(--alternative-color);
+}
+
+.btn-secondary {
+  background: var(--secondary-color);
+  color: #fff;
+}
+
+.btn-small {
+  padding: 10px;
+  margin-top: 10px;
+}
+
+.btn-small:hover {
+  color: #fff;
+  background: var(--secondary-color);
+}
+
+/* -- Centered Sections -- */
+
+#header,
+#user-buttons,
+#welcome,
+#add-new,
+#grid-list,
+#login-form,
+#register-form {
+  text-align: center;
+}
+
+/* Absolute icons & input */
+#grid-list li,
+.note-icons button {
+  position: relative;
+}
+
+#grid-list input,
+.note-icons input {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  cursor: pointer;
+}
+
+/* -- Top Section - Img Bg -- */
+
+#top-section {
+  background: url(/img/note-img.jpg) no-repeat center center;
+  width: 100%;
+  height: 100%;
+  padding: 40px 0;
+}
+
+/* -- Main Area of App -- */
+
+#main-panel {
+  max-width: 900px;
+  height: 100%;
+  margin: 60px auto;
+  padding: 10px 45px 50px;
+  background: #fff;
+  border-radius: 10px;
+  -webkit-box-shadow: 0 0 13px 5px #00000029;
+  box-shadow: 0 0 13px 5px #00000029;
+}
+
+/* -- Header -- */
+
+#header span {
+  color: var(--primary-color);
+}
+
+h1 {
+  font-size: 50px;
+  line-height: 58px;
+}
+
+/* -- Login/Register -- */
+
+#user-buttons {
+  margin: 35px 0 25px;
+}
+
+#user-buttons ul li {
+  margin: 0 5px;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+#user-buttons ul i {
+  font-size: 20px;
+  color: var(--alternative-color);
+}
+
+/* -- Welcome -- */
+
+#welcome,
+#login-title,
+#register-title {
+  font-weight: 600;
+  text-align: center;
+}
+
+#welcome h3,
+#login-title,
+#register-title {
+  font-size: 25px;
+  padding: 5px 0;
+}
+
+#welcome h5,
+#login-title,
+#register-title {
+  font-size: 18px;
+}
+
+/* -- Add New Note Button -- */
+
+#add-new {
+  margin: 20px 0 0;
+}
+
+#add-new .new-note {
+  font-size: 20px;
+  line-height: 25px;
+  padding: 20px;
+}
+
+/* -- New Note Form -- */
+
+#new-note-form {
+  overflow: hidden;
+  margin-top: 0;
+  max-height: 0;
+  -webkit-transition: 0.5s ease-in-out;
+  -o-transition: 0.5s ease-in-out;
+  transition: 0.5s ease-in-out;
+}
+
+#new-note-form div {
+  margin-top: -300px;
+  background: var(--primary-color);
+  border-radius: 5px;
+  margin-bottom: 20px;
+  padding: 20px;
+  -webkit-transition: all 0.5s ease-in-out;
+  -o-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+}
+
+/* -- Grid/List Buttons -- */
+
+#grid-list {
+  margin-bottom: 35px;
+}
+
+#grid-list input {
+  width: 55px;
+  height: 55px;
+}
+
+.grid-icon,
+.list-icon {
+  width: 55px;
+  height: 55px;
+  text-align: center;
+}
+
+.grid-icon i,
+.list-icon i {
+  margin-right: 0;
+  color: #fff;
+  font-size: 26px;
+  line-height: 55px;
+}
+
+/* -- Notes Area -- */
+
+.grid-view,
+.notes {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 20px 1fr 20px 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 20px;
+}
+
+.list-view {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr;
+  grid-template-columns: 1fr;
+  grid-gap: 20px;
+}
+
+#notes-area .grid-view .single-note,
+#notes-area .single-note:not(.list-view .single-note) {
+  max-width: 255px;
+}
+
+#notes-area .single-note {
+  background: var(--light-grey);
+  padding: 20px;
+  border-radius: 5px;
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
+}
+
+#notes-area .single-note input[type="text"],
+#notes-area .single-note textarea {
+  pointer-events: none;
+}
+
+#notes-area .single-note input[type="text"],
+#new-note-form input[type="text"] {
+  width: 100%;
+  color: var(--primary-color);
+  font-size: 24px;
+  padding: 5px 10px;
+  background: #fff;
+  border-radius: 5px;
+  margin: 5px 0;
+}
+
+#notes-area .single-note textarea,
+#new-note-form textarea {
+  padding: 10px;
+  font: var(--font);
+  font-size: 16px;
+  font-weight: 500;
+  max-width: 100%;
+  width: 100%;
+  border: none;
+  border-radius: 5px;
+  overflow: hidden;
+  background: #fff;
+}
+
+#notes-area .single-note textarea:focus-visible,
+#notes-area .single-note input[type="text"]:focus-visible,
+#new-note-form textarea:focus-visible,
+#new-note-form input[type="text"]:focus-visible {
+  outline-color: #e6e6e6;
+}
+
+input::-webkit-input-placeholder,
+textarea::-webkit-input-placeholder {
+  font-size: 15px;
+  line-height: 20px;
+  font-weight: 400;
+}
+
+input::-moz-placeholder,
+textarea::-moz-placeholder {
+  font-size: 15px;
+  line-height: 20px;
+  font-weight: 400;
+}
+
+input:-ms-input-placeholder,
+textarea:-ms-input-placeholder {
+  font-size: 15px;
+  line-height: 20px;
+  font-weight: 400;
+}
+
+input::-ms-input-placeholder,
+textarea::-ms-input-placeholder {
+  font-size: 15px;
+  line-height: 20px;
+  font-weight: 400;
+}
+
+input::placeholder,
+textarea::placeholder {
+  font-size: 15px;
+  line-height: 20px;
+  font-weight: 400;
+}
+
+.single-note h2,
+.single-note p {
+  overflow: hidden;
+  word-break: break-all;
+}
+
+/* -- Note Icons -- */
+
+.note-icons {
+  text-align: right;
+  margin: -5px -5px 5px 0;
+}
+
+.note-icons i {
+  font-size: 20px;
+  color: var(--secondary-color);
+}
+
+.note-icons input {
+  width: 22px;
+  height: 27px;
+}
+
+/* -- Login/Register Form -- */
+
+#login-form,
+#register-form {
+  padding: 20px;
+}
+
+#login-form label,
+#register-form label {
+  margin: 0 3px 0 10px;
+  font-weight: 600;
+}
+
+#login-form input,
+#register-form input {
+  padding: 5px;
+}
+
+#login-title,
+#register-title {
+  margin-top: 20px;
+}
+
+/* -- Responsive -- */
+
+@media (max-width: 768px) {
+  #main-panel {
+    max-width: 100%;
+    margin: 0;
+  }
+
+  #header h1 {
+    font-size: 35px;
+  }
+
+  #add-new .new-note {
+    font-size: 16px;
+    line-height: 20px;
+    padding: 18px;
+  }
+
+  .grid-icon i,
+  .list-icon i {
+    font-size: 20px;
+    line-height: 45px;
+  }
+
+  #grid-list input,
+  .grid-icon,
+  .list-icon {
+    width: 45px;
+    height: 45px;
+  }
+
+  .grid-view,
+  .notes:not(.list-view) {
+    -ms-grid-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 500px) {
+  .grid-view,
+  .notes:not(.list-view) {
+    -ms-grid-columns: 1fr;
+    grid-template-columns: 1fr;
+  }
+
+  #notes-area .grid-view .single-note,
+  #notes-area .single-note:not(.list-view .single-note) {
+    max-width: 100%;
+  }
+
+  #grid-list {
+    display: none;
+  }
+
+  #new-note-form .submit {
+    margin-bottom: 20px;
+  }
+}
