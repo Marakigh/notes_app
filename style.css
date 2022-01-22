@@ -298,7 +298,8 @@ h1 {
 }
 
 #notes-area .single-note textarea,
-#new-note-form textarea {
+#new-note-form textarea,
+#new-note-form #tags {
   padding: 10px;
   font: var(--font);
   font-size: 16px;
@@ -309,6 +310,13 @@ h1 {
   border-radius: 5px;
   overflow: hidden;
   background: #fff;
+}
+
+#new-note-form #tags,
+#notes-area .single-note #tags {
+  color: var(--text);
+  font-size: 16px;
+  font-weight: 500;
 }
 
 #notes-area .single-note textarea:focus-visible,

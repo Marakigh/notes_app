@@ -4,6 +4,7 @@
 function addNewNote() {
     let noteTitle = document.querySelector('#new-note-form input').value;
     let noteDesc = document.querySelector('#new-note-form textarea').value;
+    let noteTags = document.querySelector('#new-note-form #tags').value;
     
     const note = document.createElement('div');
     note.classList.add('single-note');
@@ -15,6 +16,7 @@ function addNewNote() {
         </div>
         <input type="text" value="${noteTitle}">
         <textarea rows="7">${noteDesc}</textarea>
+        <input type="text" id="tags" value="Tags: ${noteTags}">
         <button class="save-changes submit btn btn-small" style="display: none;">Save Changes</button>`
         
         init();
@@ -24,12 +26,14 @@ function addNewNote() {
     const editNote = note.querySelector('.edit-note').addEventListener('click', () => {
         note.querySelector('.single-note input[type="text"]').style = 'pointer-events: inherit;';
         note.querySelector('.single-note textarea').style = 'pointer-events: inherit;';
+        note.querySelector('.single-note #tags').style = 'pointer-events: inherit;';
         note.querySelector('.single-note .save-changes').style = 'display: block;';
     })
 
     const savesChanges = note.querySelector('.save-changes').addEventListener('click', () => {
         note.querySelector('.single-note input[type="text"]').style = 'pointer-events: none;';
         note.querySelector('.single-note textarea').style = 'pointer-events: none;';
+        note.querySelector('.single-note #tags').style = 'pointer-events: none;';
         note.querySelector('.single-note .save-changes').style = 'display: none;';
     })
 
@@ -41,6 +45,7 @@ function addNewNote() {
 function init() {
     document.querySelector('#new-note-form input').value = '';
     document.querySelector('#new-note-form textarea').value = '';
+    document.querySelector('#new-note-form #tags').value = '';
 }
 
 // Making the animation with form
